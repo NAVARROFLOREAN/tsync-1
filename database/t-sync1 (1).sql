@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2024 at 01:38 PM
+-- Generation Time: Apr 09, 2024 at 07:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -44,6 +44,21 @@ INSERT INTO `designations` (`id`, `name`, `category`, `description`, `created_at
 (4, 'Backend developer (JUNIOR)', 'Web Development', 'The person who has experience 1-3 years and deal with DATABASES and API\'s and deal with logic of backend', '2024-03-31 00:13:39', '2024-03-31 00:13:39'),
 (5, 'Backend developer (SENIOR)', 'Web Development', 'The person who has experience 4-6 years and deal with DATABASES and API\'s and deal with logic of backend', '2024-03-31 00:14:13', '2024-03-31 00:14:13'),
 (6, 'Frontend developer (JUNIOR)', 'Web Development', 'This person who has experience 1-3 years and deal with UI/UX and appearance of the application', '2024-03-31 00:14:44', '2024-03-31 00:14:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `event_title` varchar(75) NOT NULL,
+  `event_date` date NOT NULL,
+  `color` varchar(75) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -160,7 +175,8 @@ INSERT INTO `projects` (`id`, `project_name`, `project_description`, `status`, `
 (5, 'secret', 'asfdhgjkl', 'On Hold', 15, 'ucc', 'daryll', 25000, 20000, '480', '2024-04-03 23:23:19', '2024-04-03 23:23:19'),
 (6, 'San Miguel', 'asdfghjkl;\'', 'On Hold', 25, 'ucc', 'daryll', 25000, 23500, '480', '2024-04-03 23:24:51', '2024-04-03 23:24:51'),
 (7, 'kkk', 'kkk', 'On Hold', 30, 'ucc', 'daryll', 25000, 20000, '480', '2024-04-03 23:28:30', '2024-04-03 23:28:30'),
-(8, 'bbbb', 'bbbb', 'On Hold', 50, 'ucc', 'daryll', 25000, 12345, '24', '2024-04-04 18:42:45', '2024-04-04 18:42:45');
+(8, 'bbbb', 'bbbb', 'On Hold', 50, 'ucc', 'daryll', 25000, 12345, '24', '2024-04-04 18:42:45', '2024-04-04 18:42:45'),
+(14, 'AAAA', 'AAAAA', 'On Hold', NULL, 'ucc', 'daryll', 25000, 23456, '24', '2024-04-07 08:27:26', '2024-04-07 08:27:26');
 
 -- --------------------------------------------------------
 
@@ -244,6 +260,12 @@ ALTER TABLE `designations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -306,6 +328,12 @@ ALTER TABLE `designations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -327,7 +355,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `roles`
